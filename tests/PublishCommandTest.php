@@ -7,7 +7,12 @@ use Illuminate\Support\Facades\File;
 
 class PublishCommandTest extends TestCase
 {
-    /** @test */
+    /**
+     * Test if the command publishes the stubs.
+     *
+     * @return void
+     * @test
+     */
     public function it_can_publish_stubs(): void
     {
         $targetStubsPath = $this->app->basePath('stubs');
@@ -15,6 +20,7 @@ class PublishCommandTest extends TestCase
 
         $this
             ->artisan('r2h-stubs:publish')
+            ->expectsOutput('39 / 39 stubs published.')
             ->assertExitCode(0);
 
         $stubPath = __DIR__ . '/../stubs/migration.stub';
