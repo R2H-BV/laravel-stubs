@@ -3,7 +3,7 @@ name: Unit tests
 on:
   push:
   schedule:
-    - 0 0 * * *
+    - cron: '0 0 * * *'
 
 jobs:
   test:
