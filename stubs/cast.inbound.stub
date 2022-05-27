@@ -1,0 +1,23 @@
+<?php
+declare(strict_types = 1);
+
+namespace {{ namespace }};
+
+use Illuminate\Contracts\Database\Eloquent\CastsInboundAttributes;
+
+class {{ class }} implements CastsInboundAttributes
+{
+    /**
+     * Prepare the given value for storage.
+     *
+     * @param  \Illuminate\Database\Eloquent\Model $model      The model object.
+     * @param  string                              $key        The attribute key.
+     * @param  mixed                               $value      The attribute value.
+     * @param  array                               $attributes The model attributes.
+     * @return mixed
+     */
+    public function set($model, string $key, $value, array $attributes) // phpcs:ignore
+    {
+        return $value;
+    }
+}

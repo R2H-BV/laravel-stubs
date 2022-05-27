@@ -1,0 +1,22 @@
+<?php
+declare(strict_types = 1);
+
+namespace {{ namespace }};
+
+use Closure;
+use Illuminate\Http\Request;
+
+class {{ class }}
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request $request The request object.
+     * @param  \Closure                 $next    The next handler.
+     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
+     */
+    public function handle(Request $request, Closure $next) // phpcs:ignore
+    {
+        return $next($request);
+    }
+}
