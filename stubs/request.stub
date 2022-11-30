@@ -28,4 +28,24 @@ class {{ class }} extends FormRequest
             //
         ];
     }
+
+    /**
+     * Get custom messages for validator errors.
+     *
+     * @return string[]
+     */
+    public function messages(): array
+    {
+        return [];
+    }
+
+    /**
+     * Get custom attributes for validator errors.
+     *
+     * @return string[]
+     */
+    public function attributes(): array
+    {
+        return [];
+    }
 }

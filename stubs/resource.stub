@@ -13,7 +13,7 @@ class {{ class }} extends JsonResource
      * Transform the resource into an array.
      *
      * @param  \Illuminate\Http\Request $request The request object.
-     * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
+     * @return mixed[]|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
     public function toArray($request): array | Arrayable | JsonSerializable
     {

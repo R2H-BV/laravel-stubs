@@ -36,6 +36,6 @@ class {{ class }} implements {{ ruleType }}
      */
     public function message() // phpcs:ignore
     {
-        return 'The validation error message.';
+        return __('The validation error message.');
     }
 }

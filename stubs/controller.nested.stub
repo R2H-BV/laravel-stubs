@@ -3,6 +3,7 @@ declare(strict_types = 1);
 
 namespace {{ namespace }};
 
+use Inertia\Response;
 use {{ namespacedModel }};
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -15,7 +16,7 @@ class {{ class }} extends Controller
      * Display a listing of the resource.
      *
      * @param  \{{ namespacedParentModel }} ${{ parentModelVariable }} The parent model object.
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function index({{ parentModel }} ${{ parentModelVariable }}): Response
     {
@@ -26,7 +27,7 @@ class {{ class }} extends Controller
      * Show the form for creating a new resource.
      *
      * @param  \{{ namespacedParentModel }} ${{ parentModelVariable }} The parent model object.
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function create({{ parentModel }} ${{ parentModelVariable }}): Response
     {
@@ -38,9 +39,9 @@ class {{ class }} extends Controller
      *
      * @param  \Illuminate\Http\Request $request The request object.
      * @param  \{{ namespacedParentModel }} ${{ parentModelVariable }} The parent model object.
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request, {{ parentModel }} ${{ parentModelVariable }}): Response
+    public function store(Request $request, {{ parentModel }} ${{ parentModelVariable }}): RedirectResponse
     {
         //
     }
@@ -50,7 +51,7 @@ class {{ class }} extends Controller
      *
      * @param  \{{ namespacedParentModel }} ${{ parentModelVariable }} The parent model object.
      * @param  \{{ namespacedModel }} ${{ modelVariable }} The model object.
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function show({{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }}): Response
     {
@@ -62,7 +63,7 @@ class {{ class }} extends Controller
      *
      * @param  \{{ namespacedParentModel }} ${{ parentModelVariable }} The parent model object.
      * @param  \{{ namespacedModel }} ${{ modelVariable }} The model object.
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function edit({{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }}): Response
     {
@@ -75,9 +76,9 @@ class {{ class }} extends Controller
      * @param  \Illuminate\Http\Request $request The request object.
      * @param  \{{ namespacedParentModel }} ${{ parentModelVariable }} The parent model object.
      * @param  \{{ namespacedModel }} ${{ modelVariable }} The model object.
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, {{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }}): Response
+    public function update(Request $request, {{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }}): RedirectResponse
     {
         //
     }
@@ -87,9 +88,9 @@ class {{ class }} extends Controller
      *
      * @param  \{{ namespacedParentModel }} ${{ parentModelVariable }} The parent model object.
      * @param  \{{ namespacedModel }} ${{ modelVariable }} The model object.
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy({{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }}): Response
+    public function destroy({{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }}): RedirectResponse
     {
         //
     }

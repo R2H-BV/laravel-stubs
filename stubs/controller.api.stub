@@ -3,8 +3,9 @@ declare(strict_types = 1);
 
 namespace {{ namespace }};
 
+use Inertia\Response;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Illuminate\Http\RedirectResponse;
 use {{ rootNamespace }}Http\Controllers\Controller;
 
 class {{ class }} extends Controller
@@ -12,7 +13,7 @@ class {{ class }} extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function index(): Response
     {
@@ -23,9 +24,9 @@ class {{ class }} extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request The request object.
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request): Response
+    public function store(Request $request): RedirectResponse
     {
         //
     }
@@ -34,7 +35,7 @@ class {{ class }} extends Controller
      * Display the specified resource.
      *
      * @param  integer $id The resource identifier.
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function show($id): Response
     {
@@ -46,7 +47,7 @@ class {{ class }} extends Controller
      *
      * @param  \Illuminate\Http\Request $request The request object.
      * @param  integer                  $id      The resource identifier.
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, $id): Response
     {
@@ -57,7 +58,7 @@ class {{ class }} extends Controller
      * Remove the specified resource from storage.
      *
      * @param  integer $id The resource identifier.
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id): Response
     {
