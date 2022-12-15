@@ -1,0 +1,84 @@
+<?php
+declare(strict_types = 1);
+
+namespace {{ namespace }};
+
+use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Lenses\Lens;
+use Illuminate\Database\Eloquent\Builder;
+use Laravel\Nova\Http\Requests\LensRequest;
+use Laravel\Nova\Http\Requests\NovaRequest;
+
+class {{ class }} extends Lens
+{
+    /**
+     * Get the query builder / paginator for the lens.
+     *
+     * @param  \Laravel\Nova\Http\Requests\LensRequest $request The request object.
+     * @param  \Illuminate\Database\Eloquent\Builder   $query   The query builder.
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public static function query(LensRequest $request, $query): Builder
+    {
+        return $request->withOrdering($request->withFilters(
+            $query
+        ));
+    }
+
+    /**
+     * Get the fields available to the lens.
+     *
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest $request The request object.
+     * @return \Laravel\Nova\Fields\Field[]
+     */
+    public function fields(NovaRequest $request): array
+    {
+        return [
+            ID::make(__('ID'), 'id')->sortable(),
+        ];
+    }
+
+    /**
+     * Get the cards available on the lens.
+     *
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest $request The request object.
+     * @return \Laravel\Nova\Card[]
+     */
+    public function cards(NovaRequest $request): array
+    {
+        return [];
+    }
+
+    /**
+     * Get the filters available for the lens.
+     *
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest $request The request object.
+     * @return \Laravel\Nova\Filters\Filter[]
+     */
+    public function filters(NovaRequest $request): array
+    {
+        return [];
+    }
+
+    /**
+     * Get the actions available on the lens.
+     *
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest $request The request object.
+     * @return \Laravel\Nova\Actions\Action[]
+     */
+    public function actions(NovaRequest $request): array
+    {
+        return parent::actions($request);
+    }
+
+    /**
+     * Get the URI key for the lens.
+     *
+     * @return string
+     */
+    public function uriKey(): string
+    {
+        return 'uri-key';
+    }
+}
