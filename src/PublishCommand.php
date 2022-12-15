@@ -46,7 +46,7 @@ class PublishCommand extends Command
         }
 
         // Retrieve the stubs that should be published.
-        $files = collect(File::files(__DIR__ . '/../stubs'))->unless(
+        $files = collect(File::allFiles(__DIR__ . '/../stubs'))->unless(
             $this->option('force'),
             fn (Collection $files): Collection => $this->unpublished($files)
         );
@@ -79,6 +79,11 @@ class PublishCommand extends Command
     private function publish(Collection $files): int
     {
         return $files->reduce(function (int $published, SplFileInfo $file): int {
+            // Create the target directory if it doesn't yet exist.
+            if (!is_dir($target = str($this->targetPath($file))->beforeLast('/')->toString())) {
+                (new Filesystem)->makeDirectory($target);
+            }
+
             file_put_contents($this->targetPath($file), file_get_contents($file->getPathname()));
 
             return $published + 1;
@@ -93,6 +98,7 @@ class PublishCommand extends Command
      */
     private function targetPath(SplFileInfo $file): string
     {
-        return "{$this->laravel->basePath('stubs')}/{$file->getFilename()}";
+        $directory = str($file->getPath())->after('/stubs')->toString();
+        return "{$this->laravel->basePath('stubs')}{$directory}/{$file->getFilename()}";
     }
 }
