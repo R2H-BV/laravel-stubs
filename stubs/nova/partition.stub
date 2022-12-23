@@ -32,7 +32,7 @@ class {{ class }} extends Partition
     /**
      * Determine the amount of time the results of the metric should be cached.
      *
-     * @return \DateTimeInterface|\DateInterval|float|int|null
+     * @return \DateTimeInterface|\DateInterval|float|integer|null
      */
     public function cacheFor()
     {
