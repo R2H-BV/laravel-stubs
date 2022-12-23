@@ -8,6 +8,16 @@ use Laravel\Nova\Dashboard;
 class {{ class }} extends Dashboard
 {
     /**
+     * Get the displayable name of the dashboard.
+     *
+     * @return string
+     */
+    public function name(): string
+    {
+        return '{{ class }}';
+    }
+
+    /**
      * Get the cards for the dashboard.
      *
      * @return \Laravel\Nova\Card[]

@@ -17,6 +17,16 @@ class {{ class }} extends Filter
     public $component = 'select-filter';
 
     /**
+     * Get the displayable name of the filter.
+     *
+     * @return string
+     */
+    public function name(): string
+    {
+        return '{{ class }}';
+    }
+
+    /**
      * Apply the filter to the given query.
      *
      * @param  \Laravel\Nova\Http\Requests\NovaRequest $request The request object.

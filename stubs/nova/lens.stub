@@ -13,6 +13,16 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 class {{ class }} extends Lens
 {
     /**
+     * Get the displayable name of the lens.
+     *
+     * @return string
+     */
+    public function name(): string
+    {
+        return '{{ class }}';
+    }
+
+    /**
      * Get the query builder / paginator for the lens.
      *
      * @param  \Laravel\Nova\Http\Requests\LensRequest $request The request object.

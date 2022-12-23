@@ -4,15 +4,15 @@ declare(strict_types = 1);
 namespace {{ namespace }};
 
 use Illuminate\Bus\Batchable;
-use Illuminate\Bus\PendingBatch;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Collection;
 use Laravel\Nova\Actions\Action;
-use Laravel\Nova\Contracts\BatchableAction;
+use Illuminate\Bus\PendingBatch;
+use Illuminate\Support\Collection;
 use Laravel\Nova\Fields\ActionFields;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Laravel\Nova\Contracts\BatchableAction;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class {{ class }} extends Action implements ShouldQueue
@@ -21,6 +21,16 @@ class {{ class }} extends Action implements ShouldQueue
     use Queueable;
     use SerializesModels;
     use InteractsWithQueue;
+
+    /**
+     * Get the displayable name of the action.
+     *
+     * @return string
+     */
+    public function name(): string
+    {
+        return '{{ class }}';
+    }
 
     /**
      * Perform the action on the given models.

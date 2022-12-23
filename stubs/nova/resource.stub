@@ -3,8 +3,8 @@ declare(strict_types = 1);
 
 namespace {{ namespace }};
 
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class {{ class }} extends Resource
@@ -15,6 +15,13 @@ class {{ class }} extends Resource
      * @var class-string<\{{ namespacedModel }}>
      */
     public static $model = \{{ namespacedModel }}::class;
+
+    /**
+     * The visual style used for the table. Available options are 'tight' and 'default'.
+     *
+     * @var string
+     */
+    public static $tableStyle = 'default';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -31,6 +38,26 @@ class {{ class }} extends Resource
     public static $search = [
         'id',
     ];
+
+    /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
+    public static function label(): string
+    {
+        return '{{ class }}s';
+    }
+
+    /**
+     * Get the displayable singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel(): string
+    {
+        return '{{ class }}';
+    }
 
     /**
      * Get the fields displayed by the resource.

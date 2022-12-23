@@ -23,6 +23,16 @@ class {{ class }} extends DestructiveAction implements ShouldQueue
     use InteractsWithQueue;
 
     /**
+     * Get the displayable name of the action.
+     *
+     * @return string
+     */
+    public function name(): string
+    {
+        return '{{ class }}';
+    }
+
+    /**
      * Perform the action on the given models.
      *
      * @param  \Laravel\Nova\Fields\ActionFields $fields The fields list.
