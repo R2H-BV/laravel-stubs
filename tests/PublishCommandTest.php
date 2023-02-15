@@ -20,7 +20,7 @@ class PublishCommandTest extends TestCase
 
         $this
             ->artisan('r2h-stubs:publish')
-            ->expectsOutput('39 / 39 stubs published.')
+            ->expectsOutput('53 / 53 stubs published.')
             ->assertExitCode(0);
 
         $stubPath = __DIR__ . '/../stubs/migration.stub';
