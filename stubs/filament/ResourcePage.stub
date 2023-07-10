@@ -1,0 +1,18 @@
+<?php
+declare(strict_types = 1);
+
+namespace {{ namespace }};
+
+use {{ resource }};
+use Filament\Pages\Actions;
+use {{ baseResourcePage }};
+
+class {{ resourcePageClass }} extends {{ baseResourcePageClass }}
+{
+    /**
+     * The resource class that this page represents.
+     *
+     * @var string
+     */
+    protected static string $resource = {{ resourceClass }}::class;
+}

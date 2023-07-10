@@ -1,0 +1,30 @@
+<?php
+declare(strict_types = 1);
+
+namespace {{ namespace }};
+
+use {{ resource }};
+use Filament\Pages\Actions;
+use Filament\Resources\Pages\ListRecords;
+
+class {{ resourcePageClass }} extends ListRecords
+{
+    /**
+     * The resource the page corresponds to.
+     *
+     * @var string
+     */
+    protected static string $resource = {{ resourceClass }}::class;
+
+    /**
+     * Get the actions available on the page.
+     *
+     * @return \Filament\Pages\Actions\Action[]
+     */
+    protected function getActions(): array
+    {
+        return [
+            Actions\CreateAction::make(),
+        ];
+    }
+}
