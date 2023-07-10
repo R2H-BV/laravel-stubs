@@ -24,8 +24,6 @@ class {{ class }} extends DestructiveAction implements ShouldQueue
 
     /**
      * Get the displayable name of the action.
-     *
-     * @return string
      */
     public function name(): string
     {
@@ -34,10 +32,6 @@ class {{ class }} extends DestructiveAction implements ShouldQueue
 
     /**
      * Perform the action on the given models.
-     *
-     * @param  \Laravel\Nova\Fields\ActionFields $fields The fields list.
-     * @param  \Illuminate\Support\Collection    $models The models list.
-     * @return mixed
      */
     public function handle(ActionFields $fields, Collection $models): mixed
     {
@@ -47,7 +41,6 @@ class {{ class }} extends DestructiveAction implements ShouldQueue
     /**
      * Get the fields available on the action.
      *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest $request The request object.
      * @return \Laravel\Nova\Fields\Field[]
      */
     public function fields(NovaRequest $request): array
@@ -57,10 +50,6 @@ class {{ class }} extends DestructiveAction implements ShouldQueue
 
     /**
      * Register `then`, `catch` and `finally` event on batchable job.
-     *
-     * @param  \Laravel\Nova\Fields\ActionFields $fields The fields list.
-     * @param  \Illuminate\Bus\PendingBatch      $batch  The batch object.
-     * @return void
      */
     public function withBatch(ActionFields $fields, PendingBatch $batch): void
     {

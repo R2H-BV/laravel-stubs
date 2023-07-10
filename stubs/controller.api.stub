@@ -12,8 +12,6 @@ class {{ class }} extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Inertia\Response
      */
     public function index(): Response
     {
@@ -22,9 +20,6 @@ class {{ class }} extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request The request object.
-     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request): RedirectResponse
     {
@@ -33,9 +28,6 @@ class {{ class }} extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param  integer $id The resource identifier.
-     * @return \Inertia\Response
      */
     public function show($id): Response
     {
@@ -44,10 +36,6 @@ class {{ class }} extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request The request object.
-     * @param  integer                  $id      The resource identifier.
-     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, $id): Response
     {
@@ -56,9 +44,6 @@ class {{ class }} extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  integer $id The resource identifier.
-     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id): Response
     {

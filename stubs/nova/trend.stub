@@ -10,8 +10,6 @@ class {{ class }} extends Trend
 {
     /**
      * Get the displayable name of the metric.
-     *
-     * @return string
      */
     public function name(): string
     {
@@ -21,7 +19,6 @@ class {{ class }} extends Trend
     /**
      * Calculate the value of the metric.
      *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest $request The request object.
      * @return mixed
      */
     public function calculate(NovaRequest $request): mixed
@@ -55,8 +52,6 @@ class {{ class }} extends Trend
 
     /**
      * Get the URI key for the metric.
-     *
-     * @return string
      */
     public function uriKey(): string
     {

@@ -9,8 +9,6 @@ class {{ class }} extends Dashboard
 {
     /**
      * Get the displayable name of the dashboard.
-     *
-     * @return string
      */
     public function name(): string
     {
@@ -31,8 +29,6 @@ class {{ class }} extends Dashboard
 
     /**
      * Get the URI key for the dashboard.
-     *
-     * @return string
      */
     public function uriKey(): string
     {

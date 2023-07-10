@@ -12,8 +12,6 @@ class {{ class }} extends DateFilter
 {
     /**
      * Get the displayable name of the filter.
-     *
-     * @return string
      */
     public function name(): string
     {
@@ -23,7 +21,6 @@ class {{ class }} extends DateFilter
     /**
      * Apply the filter to the given query.
      *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest $request The request object.
      * @param  \Illuminate\Database\Eloquent\Builder   $query   The query builder.
      * @param  mixed                                   $value   The value of the filter.
      * @return \Illuminate\Database\Eloquent\Builder

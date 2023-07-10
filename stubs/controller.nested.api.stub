@@ -13,9 +13,6 @@ class {{ class }} extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @param  \{{ namespacedParentModel }} ${{ parentModelVariable }} The parent model object.
-     * @return \Illuminate\Http\Response
      */
     public function index({{ parentModel }} ${{ parentModelVariable }}): Response
     {
@@ -24,10 +21,6 @@ class {{ class }} extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request The request object.
-     * @param  \{{ namespacedParentModel }} ${{ parentModelVariable }} The parent model object.
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request, {{ parentModel }} ${{ parentModelVariable }}): Response
     {
@@ -36,10 +29,6 @@ class {{ class }} extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param  \{{ namespacedParentModel }} ${{ parentModelVariable }} The parent model object.
-     * @param  \{{ namespacedModel }} ${{ modelVariable }} The model object.
-     * @return \Illuminate\Http\Response
      */
     public function show({{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }}): Response
     {
@@ -48,11 +37,6 @@ class {{ class }} extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request The request object.
-     * @param  \{{ namespacedParentModel }} ${{ parentModelVariable }} The parent model object.
-     * @param  \{{ namespacedModel }} ${{ modelVariable }} The model object.
-     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, {{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }}): Response
     {
@@ -61,10 +45,6 @@ class {{ class }} extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  \{{ namespacedParentModel }} ${{ parentModelVariable }} The parent model object.
-     * @param  \{{ namespacedModel }} ${{ modelVariable }} The model object.
-     * @return \Illuminate\Http\Response
      */
     public function destroy({{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }}): Response
     {

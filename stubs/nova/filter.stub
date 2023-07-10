@@ -11,15 +11,11 @@ class {{ class }} extends Filter
 {
     /**
      * The filter's component.
-     *
-     * @var string
      */
     public $component = 'select-filter';
 
     /**
      * Get the displayable name of the filter.
-     *
-     * @return string
      */
     public function name(): string
     {
@@ -29,10 +25,8 @@ class {{ class }} extends Filter
     /**
      * Apply the filter to the given query.
      *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest $request The request object.
      * @param  \Illuminate\Database\Eloquent\Builder   $query   The query object.
      * @param  mixed                                   $value   The filter value.
-     * @return \Illuminate\Database\Eloquent\Builder
      */
     public function apply(NovaRequest $request, $query, $value): Builder
     {
@@ -42,7 +36,6 @@ class {{ class }} extends Filter
     /**
      * Get the filter's available options.
      *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest $request The request object.
      * @return mixed[]
      */
     public function options(NovaRequest $request)

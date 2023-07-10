@@ -11,8 +11,6 @@ class {{ class }} extends BooleanFilter
 {
     /**
      * Get the displayable name of the filter.
-     *
-     * @return string
      */
     public function name(): string
     {
@@ -22,10 +20,8 @@ class {{ class }} extends BooleanFilter
     /**
      * Apply the filter to the given query.
      *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest $request The request object.
      * @param  \Illuminate\Database\Eloquent\Builder   $query   The query builder.
      * @param  mixed                                   $value   The filter value.
-     * @return \Illuminate\Database\Eloquent\Builder
      */
     public function apply(NovaRequest $request, $query, $value): Builder
     {
@@ -35,7 +31,6 @@ class {{ class }} extends BooleanFilter
     /**
      * Get the filter's available options.
      *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest $request The request object.
      * @return mixed[]
      */
     public function options(NovaRequest $request): array

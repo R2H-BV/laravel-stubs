@@ -12,8 +12,6 @@ class {{ class }} extends DestructiveAction
 {
     /**
      * Get the displayable name of the action.
-     *
-     * @return string
      */
     public function name(): string
     {
@@ -22,10 +20,6 @@ class {{ class }} extends DestructiveAction
 
     /**
      * Perform the action on the given models.
-     *
-     * @param  \Laravel\Nova\Fields\ActionFields $fields The fields available on the action.
-     * @param  \Illuminate\Support\Collection    $models The models to act on.
-     * @return mixed
      */
     public function handle(ActionFields $fields, Collection $models): mixed
     {
@@ -35,7 +29,6 @@ class {{ class }} extends DestructiveAction
     /**
      * Get the fields available on the action.
      *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest $request The request object.
      * @return \Laravel\Nova\Fields\Field[]
      */
     public function fields(NovaRequest $request): array

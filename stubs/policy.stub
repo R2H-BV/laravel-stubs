@@ -13,9 +13,6 @@ class {{ class }}
 
     /**
      * Determine whether the user can view any models.
-     *
-     * @param  \{{ namespacedUserModel }} $user The user model.
-     * @return boolean
      */
     public function viewAny({{ user }} $user): bool
     {
@@ -24,10 +21,6 @@ class {{ class }}
 
     /**
      * Determine whether the user can view the model.
-     *
-     * @param  \{{ namespacedUserModel }} $user The user model.
-     * @param  \{{ namespacedModel }} ${{ modelVariable }} The ${{ modelVariable }} model.
-     * @return boolean
      */
     public function view({{ user }} $user, {{ model }} ${{ modelVariable }}): bool
     {
@@ -36,9 +29,6 @@ class {{ class }}
 
     /**
      * Determine whether the user can create models.
-     *
-     * @param  \{{ namespacedUserModel }} $user The user model.
-     * @return boolean
      */
     public function create({{ user }} $user): bool
     {
@@ -47,10 +37,6 @@ class {{ class }}
 
     /**
      * Determine whether the user can update the model.
-     *
-     * @param  \{{ namespacedUserModel }} $user The user model.
-     * @param  \{{ namespacedModel }} ${{ modelVariable }} The ${{ modelVariable }} model.
-     * @return boolean
      */
     public function update({{ user }} $user, {{ model }} ${{ modelVariable }}): bool
     {
@@ -59,10 +45,6 @@ class {{ class }}
 
     /**
      * Determine whether the user can delete the model.
-     *
-     * @param  \{{ namespacedUserModel }} $user The user model.
-     * @param  \{{ namespacedModel }} ${{ modelVariable }} The ${{ modelVariable }} model.
-     * @return boolean
      */
     public function delete({{ user }} $user, {{ model }} ${{ modelVariable }}): bool
     {
@@ -71,10 +53,6 @@ class {{ class }}
 
     /**
      * Determine whether the user can restore the model.
-     *
-     * @param  \{{ namespacedUserModel }} $user The user model.
-     * @param  \{{ namespacedModel }} ${{ modelVariable }} The ${{ modelVariable }} model.
-     * @return boolean
      */
     public function restore({{ user }} $user, {{ model }} ${{ modelVariable }}): bool
     {
@@ -83,10 +61,6 @@ class {{ class }}
 
     /**
      * Determine whether the user can permanently delete the model.
-     *
-     * @param  \{{ namespacedUserModel }} $user The user model.
-     * @param  \{{ namespacedModel }} ${{ modelVariable }} The ${{ modelVariable }} model.
-     * @return boolean
      */
     public function forceDelete({{ user }} $user, {{ model }} ${{ modelVariable }}): bool
     {

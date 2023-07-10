@@ -20,4 +20,13 @@ class {{ class }} extends Model
     protected $fillable = [
         //
     ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var string[]
+     */
+    protected $casts = [
+        //
+    ];
 }
