@@ -3,37 +3,16 @@ declare(strict_types = 1);
 
 namespace {{ namespace }};
 
+use Closure;
 use Illuminate\Contracts\Validation\{{ ruleType }};
 
 class {{ class }} implements {{ ruleType }}
 {
     /**
-     * Create a new rule instance.
+     * Run the validation rule.
      */
-    public function __construct()
+    public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         //
-    }
-
-    /**
-     * Determine if the validation rule passes.
-     *
-     * @param  string $attribute The attribute name,
-     * @param  mixed  $value     The attribute value.
-     * @return boolean
-     */
-    public function passes($attribute, $value) // phpcs:ignore
-    {
-        //
-    }
-
-    /**
-     * Get the validation error message.
-     *
-     * @return string
-     */
-    public function message() // phpcs:ignore
-    {
-        return __('The validation error message.');
     }
 }
