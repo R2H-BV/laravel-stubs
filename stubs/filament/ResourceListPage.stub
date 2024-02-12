@@ -9,17 +9,10 @@ use Filament\Resources\Pages\ListRecords;
 
 class {{ resourcePageClass }} extends ListRecords
 {
-    /**
-     * The resource the page corresponds to.
-     *
-     * @var string
-     */
     protected static string $resource = {{ resourceClass }}::class;
 
     /**
-     * Get the actions available on the page.
-     *
-     * @return \Filament\Pages\Actions\Action[]
+     * @return array<Actions\Action>
      */
     protected function getActions(): array
     {
