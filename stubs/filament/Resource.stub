@@ -1,0 +1,59 @@
+<?php
+declare(strict_types = 1);
+
+namespace {{ namespace }};
+
+use {{ resource }}\Pages;
+use {{ model }};
+use Filament\Forms;
+use Filament\Resources\Resource;
+use Filament\Tables;
+
+class {{ resourceClass }} extends Resource
+{
+    protected static ?string $slug = 'SLUG';
+    protected static ?int $navigationSort = 0_00;
+    protected static ?string $model = {{ modelClass }}::class;
+    protected static ?string $modelLabel = 'LABEL';
+    protected static ?string $navigationIcon = null;
+    protected static int $globalSearchResultsLimit = 5;
+    protected static ?string $navigationGroup = 'GROUP';
+    protected static ?string $pluralModelLabel = 'PLURAL LABEL';
+    protected static ?string $recordTitleAttribute = 'name';
+
+    public static function form(Forms\Form $form): Forms\Form
+    {
+        return $form
+            ->schema([
+{{ formSchema }}
+            ]);
+    }
+
+    public static function table(Tables\Table $table): Tables\Table
+    {
+        return $table
+            ->columns([
+{{ tableColumns }}
+            ])
+            ->filters([
+{{ tableFilters }}
+            ])
+            ->actions([
+{{ tableActions }}
+            ])
+            ->bulkActions([
+{{ tableBulkActions }}
+            ]);
+    }
+{{ relations }}
+
+    /**
+     * @return array<string, \Filament\Resources\Pages\PageRegistration>
+     */
+    public static function getPages(): array
+    {
+        return [
+{{ pages }}
+        ];
+    }{{ eloquentQuery }}
+}
