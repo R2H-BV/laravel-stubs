@@ -14,25 +14,9 @@ class PublishCommand extends Command
 {
     use ConfirmableTrait;
 
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
     protected $signature = 'r2h-stubs:publish {--force : Overwrite any existing files.}';
-
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'Publish all opiniated stubs that are available for customization.';
 
-    /**
-     * Execute the console command.
-     *
-     * @return integer
-     */
     public function handle(): int
     {
         // Check if the command is being ran in production.
@@ -48,6 +32,7 @@ class PublishCommand extends Command
         // Retrieve the stubs that should be published.
         $files = collect(File::allFiles(__DIR__ . '/../stubs'))->unless(
             $this->option('force'),
+            // @phpstan-ignore-next-line
             fn (Collection $files): Collection => $this->unpublished($files)
         );
 
@@ -62,8 +47,8 @@ class PublishCommand extends Command
     /**
      * Retrieve the list of files that are not yet published.
      *
-     * @param  \Illuminate\Support\Collection $files The file list.
-     * @return \Illuminate\Support\Collection
+     * @param Collection<int, SplFileInfo> $files
+     * @return Collection<int, SplFileInfo>
      */
     private function unpublished(Collection $files): Collection
     {
@@ -73,8 +58,7 @@ class PublishCommand extends Command
     /**
      * Publish the given files to the target location.
      *
-     * @param  \Illuminate\Support\Collection $files The file list.
-     * @return integer
+     * @param Collection<int, SplFileInfo> $files
      */
     private function publish(Collection $files): int
     {
@@ -92,9 +76,6 @@ class PublishCommand extends Command
 
     /**
      * Retrieve the target path of a given file.
-     *
-     * @param  \SplFileInfo $file The file object.
-     * @return string
      */
     private function targetPath(SplFileInfo $file): string
     {

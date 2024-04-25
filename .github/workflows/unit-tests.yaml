@@ -10,15 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code.
-        uses: actions/checkout@v3
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+      - uses: actions/checkout@v3
+      - uses: shivammathur/setup-php@v2
         with:
           php-version: 8.3
           extensions: dom, mbstring, zip, intl, fileinfo
           coverage: none
-      - name: Install dependencies.
-        run: composer install --prefer-dist --no-interaction
-      - name: Run tests.
-        run: vendor/bin/phpunit ./tests
+      - run: composer install --prefer-dist --no-interaction
+      - run: vendor/bin/phpstan
+      - run: vendor/bin/phpunit ./tests
