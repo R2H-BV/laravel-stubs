@@ -9,24 +9,21 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class {{ class }} extends Model
 {
-    use HasUuids;
     use HasFactory;
+    use HasUuids;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var string[]
-     */
+    /** @var array<int, string> */
     protected $fillable = [
         //
     ];
 
     /**
-     * The attributes that should be cast to native types.
-     *
-     * @var string[]
+     * @return array<string, mixed>
      */
-    protected $casts = [
-        //
-    ];
+    protected function casts(): array
+    {
+        return [
+            //
+        ];
+    }
 }

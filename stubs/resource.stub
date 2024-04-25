@@ -10,11 +10,6 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class {{ class }} extends JsonResource
 {
-    /**
-     * Transform the resource into an array.
-     *
-     * @return mixed[]|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
-     */
     public function toArray(Request $request): array | Arrayable | JsonSerializable
     {
         return parent::toArray($request);

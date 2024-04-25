@@ -1,21 +1,6 @@
 <?php
 declare(strict_types = 1);
 
-namespace {{ namespace }};
-
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-
-class {{ class }} extends TestCase
-{
-    /**
-     * A basic feature test example.
-     */
-    public function test_example(): void
-    {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
-    }
-}
+it('returns true', function (): void {
+    expect(true)->toBe(true);
+});

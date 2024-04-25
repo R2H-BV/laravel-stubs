@@ -12,42 +12,28 @@ class {{ class }} extends Notification implements ShouldQueue
 {
     use Queueable;
 
-    /**
-     * Create a new notification instance.
-     */
     public function __construct()
     {
         //
     }
 
     /**
-     * Get the notification's delivery channels.
-     *
-     * @param  mixed $notifiable The notifiable object.
-     * @return string[]
+     * @return array<int, string>
      */
-    public function via($notifiable): array
+    public function via(object $notifiable): array
     {
         return ['mail'];
     }
 
-    /**
-     * Get the mail representation of the notification.
-     *
-     * @param  mixed $notifiable The notifiable object.
-     */
-    public function toMail($notifiable): MailMessage
+    public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)->markdown('{{ view }}');
     }
 
     /**
-     * Get the array representation of the notification.
-     *
-     * @param  mixed $notifiable The notifiable object.
-     * @return mixed[]
+     * @return array<string, string>
      */
-    public function toArray($notifiable): array
+    public function toArray(object $notifiable): array
     {
         return [
             //

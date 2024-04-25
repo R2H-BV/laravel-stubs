@@ -8,22 +8,16 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class {{ class }} extends Mailable
+class {{ class }} extends Mailable implements ShouldQueue
 {
-    use Queueable;
     use SerializesModels;
+    use Queueable;
 
-    /**
-     * Create a new message instance.
-     */
     public function __construct()
     {
         //
     }
 
-    /**
-     * Build the message.
-     */
     public function build(): {{ class }}
     {
         return $this->markdown('{{ view }}');

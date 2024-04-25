@@ -8,9 +8,6 @@ use Illuminate\Contracts\Validation\{{ ruleType }};
 
 class {{ class }} implements {{ ruleType }}
 {
-    /**
-     * Run the validation rule.
-     */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         //
