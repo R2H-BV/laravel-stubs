@@ -4,16 +4,14 @@ declare(strict_types = 1);
 namespace {{ namespace }};
 
 use {{ resource }};
-use Filament\Pages\Actions;
+use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
 class {{ resourcePageClass }} extends EditRecord
 {
     protected static string $resource = {{ resourceClass }}::class;
 
-    /**
-     * @return array<Actions\Action>
-     */
+    /** @return array<Actions\Action> */
     protected function getActions(): array
     {
         return [

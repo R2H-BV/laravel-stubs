@@ -17,9 +17,7 @@ class {{ class }} extends Model
         //
     ];
 
-    /**
-     * @return array<string, mixed>
-     */
+    /** @return array<string, mixed> */
     protected function casts(): array
     {
         return [

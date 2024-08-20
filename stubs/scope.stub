@@ -9,9 +9,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 class {{ class }} implements Scope
 {
-    /**
-     * @param Builder<Model> $builder
-     */
+    /** @param Builder<Model> $builder */
     public function apply(Builder $builder, Model $model): void
     {
         //
