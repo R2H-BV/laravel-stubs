@@ -9,10 +9,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class {{ class }} extends Model
 {
+    /** @use HasFactory<\Database\Factories\{{ class }}>
     use HasFactory;
     use HasUlids;
 
-    /** @var array<int, string> */
+    /** @var list<string> */
     protected $fillable = [
         //
     ];
